@@ -234,6 +234,27 @@ footer{
         text-align: left;
     }
 
+    .mes_competences table {
+    width:100%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mes_competences th,.mes_competences td{
+    padding: 12px;
+}
+
+.mes_competences thead{
+    background-color: var(--violet-doux);
+    color: white;
+}
+
+.mes_competences tbody td{
+    border-bottom: 1px solid var(--gris-claire);
+}
+
     .projets div{
         grid-template-columns: repeat(2,1fr);
     }
@@ -241,6 +262,64 @@ footer{
     .contact-content{
         flex-direction: row;
     }
+    footer{
+    background: var(--violet-doux);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top:0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    flex-wrap: wrap;
+}
+
+header a.logo{
+    color: var(--violet-doux);
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+}
+
+ul li a:hover{
+    color: var(--violet-doux);
+}
+
+ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background-color: var(--violet-doux);
+    transition: 0.3s;
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
 }
 
 /* ================= DESKTOP ================= */
