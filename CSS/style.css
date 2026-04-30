@@ -20,43 +20,44 @@ body{
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--gris-très-foncé);
+    overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
 header{
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2rem;
-    flex-wrap: wrap;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 header a.logo{
     color: var(--violet-doux);
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-decoration: none;
 }
 
+/* NAV MOBILE FIRST */
 ul{
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 ul li a{
     text-decoration: none;
     color: black;
     font-weight: 600;
+    font-size: 0.95rem;
     position: relative;
-    padding: 5px 0;
-    transition: 0.3s;
 }
 
 ul li a:hover{
@@ -67,10 +68,10 @@ ul li a::after{
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -3px;
     width: 0;
-    height: 3px;
-    background-color: var(--violet-doux);
+    height: 2px;
+    background: var(--violet-doux);
     transition: 0.3s;
 }
 
@@ -81,17 +82,16 @@ ul li a:hover::after{
 /* ================= HERO ================= */
 .hero{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    margin: 5rem 1rem;
-    flex-wrap: wrap;
     text-align: center;
+    gap: 1.5rem;
+    margin: 3rem 1rem;
 }
 
 .hero img{
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     border: 4px solid var(--violet-doux);
     object-fit: cover;
@@ -99,106 +99,106 @@ ul li a:hover::after{
 
 .hero h1{
     color: var(--violet-doux);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .hero p{
     color: var(--gris-foncé);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    max-width: 90%;
 }
 
 /* ================= BUTTON ================= */
 #projets{
     display: block;
-    margin: 2rem auto;
-    padding: 12px 25px;
-    background-color: var(--violet-doux);
+    margin: 1.5rem auto;
+    padding: 12px 22px;
+    background: var(--violet-doux);
     border-radius: 30px;
     border: none;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 #projets:hover{
-    background-color: var(--violet-foncé);
+    background: var(--violet-foncé);
+    transform: translateY(-2px);
 }
 
 #projets a{
     color: white;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding: 2rem 1rem;
+}
+
+section h2{
+    text-align: center;
+    color: var(--violet-doux);
+    font-size: 1.6rem;
+}
+
+section h2::after{
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: var(--violet-doux);
+    display: block;
+    margin: 0.8rem auto;
 }
 
 /* ================= ABOUT ================= */
 .a_propos{
     max-width: 800px;
     margin: auto;
-    padding: 0 1rem;
     text-align: center;
-}
-
-section h2{
-    color: var(--violet-doux);
-    font-size: 2rem;
-    text-align: center;
-}
-
-section h2::after{
-    content: "";
-    width: 80px;
-    height: 3px;
-    background: var(--violet-doux);
-    display: block;
-    margin: 1rem auto;
-    border-radius: 5px;
 }
 
 .a_propos p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--gris-foncé);
 }
 
 /* ================= COMPETENCES ================= */
 .mes_competences{
-    width: 90%;
-    margin: 50px auto;
-    padding: 20px;
+    width: 95%;
+    margin: auto;
 }
 
 .mes_competences table{
     width: 100%;
     border-collapse: collapse;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .mes_competences th,
 .mes_competences td{
-    padding: 14px;
+    padding: 10px;
+    font-size: 0.95rem;
 }
 
 .mes_competences thead{
-    background-color: var(--violet-doux);
+    background: var(--violet-doux);
     color: white;
-}
-
-.mes_competences tbody td{
-    border-bottom: 1px solid var(--gris-claire);
 }
 
 /* ================= PROJETS ================= */
 .projets div{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 1rem;
+    gap: 18px;
 }
 
 .projets article{
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
@@ -206,32 +206,25 @@ section h2::after{
     transform: translateY(-5px);
 }
 
-.projets .partie{
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
 .projets .partie img{
     width: 100%;
-    height: 180px;
+    height: 160px;
     object-fit: cover;
 }
 
 /* ================= CONTACT ================= */
 .contact-container{
-    margin: 3rem 1rem;
-    padding: 1.5rem;
+    margin: 2rem 1rem;
+    padding: 1.2rem;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .contact-content{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 /* ================= FOOTER ================= */
@@ -239,15 +232,16 @@ footer{
     background: var(--violet-doux);
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
+    padding: 1.5rem;
 }
 
 /* ================= TABLET ================= */
 @media (min-width: 768px){
 
     .hero{
+        flex-direction: row;
         text-align: left;
+        justify-content: center;
     }
 
     .projets div{
@@ -257,20 +251,16 @@ footer{
     .contact-content{
         flex-direction: row;
     }
-
-    ul{
-        gap: 25px;
-    }
 }
 
 /* ================= DESKTOP ================= */
 @media (min-width: 1024px){
 
-    .projets div{
-        grid-template-columns: repeat(3,1fr);
+    .hero h1{
+        font-size: 2.2rem;
     }
 
-    header{
-        flex-wrap: nowrap;
+    .projets div{
+        grid-template-columns: repeat(3,1fr);
     }
 }
