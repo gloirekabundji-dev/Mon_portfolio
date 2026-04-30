@@ -121,9 +121,10 @@ ul li a:hover::after{
     font-weight: bold;
 }
 
-/* ================= SECTIONS ================= */
+/* ================= A PROPOS ================= */
 .a_propos{
     max-width: 800px;
+    width: 100%;
     margin: auto;
     padding: 0 1rem;
     text-align: center;
@@ -149,6 +150,34 @@ section h2::after{
     color: var(--gris-foncé);
 }
 
+/* ================= COMPETENCES (TABLEAU) ================= */
+.mes_competences{
+    width:80%;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.mes_competences table {
+    width:100%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mes_competences th,.mes_competences td{
+    padding: 12px;
+}
+
+.mes_competences thead{
+    background-color: var(--violet-doux);
+    color: white;
+}
+
+.mes_competences tbody td{
+    border-bottom: 1px solid var(--gris-claire);
+}
+
 /* ================= PROJETS ================= */
 .projets div{
     display: grid;
@@ -159,6 +188,8 @@ section h2::after{
 
 .projets article{
     width: 100%;
+    max-width: 390px;
+    margin: auto;
 }
 
 .projets .partie{
