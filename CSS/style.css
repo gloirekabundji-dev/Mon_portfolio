@@ -8,7 +8,7 @@
     --gris-claire: #eee;
 }
 
-/* RESET */
+/* ================= RESET ================= */
 *{
     margin: 0;
     padding: 0;
@@ -18,26 +18,27 @@
 body{
     background-color: var(--gris-très-claire);
     font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: var(--gris-très-foncé);
 }
 
 /* ================= HEADER ================= */
 header{
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
     flex-wrap: wrap;
 }
 
 header a.logo{
     color: var(--violet-doux);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2rem;
     text-decoration: none;
 }
@@ -45,7 +46,8 @@ header a.logo{
 ul{
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 ul li a{
@@ -54,6 +56,7 @@ ul li a{
     font-weight: 600;
     position: relative;
     padding: 5px 0;
+    transition: 0.3s;
 }
 
 ul li a:hover{
@@ -64,7 +67,7 @@ ul li a::after{
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -4px;
     width: 0;
     height: 3px;
     background-color: var(--violet-doux);
@@ -78,8 +81,8 @@ ul li a:hover::after{
 /* ================= HERO ================= */
 .hero{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 3rem;
     margin: 5rem 1rem;
     flex-wrap: wrap;
@@ -91,6 +94,7 @@ ul li a:hover::after{
     height: 180px;
     border-radius: 50%;
     border: 4px solid var(--violet-doux);
+    object-fit: cover;
 }
 
 .hero h1{
@@ -104,15 +108,19 @@ ul li a:hover::after{
     font-size: 1.1rem;
 }
 
-/* BOUTON */
+/* ================= BUTTON ================= */
 #projets{
     display: block;
-    margin: 1.5rem auto;
-    padding: 12px 20px;
+    margin: 2rem auto;
+    padding: 12px 25px;
     background-color: var(--violet-doux);
     border-radius: 30px;
     border: none;
-    text-align: center;
+    transition: 0.3s ease;
+}
+
+#projets:hover{
+    background-color: var(--violet-foncé);
 }
 
 #projets a{
@@ -121,10 +129,9 @@ ul li a:hover::after{
     font-weight: bold;
 }
 
-/* ================= A PROPOS ================= */
+/* ================= ABOUT ================= */
 .a_propos{
     max-width: 800px;
-    width: 100%;
     margin: auto;
     padding: 0 1rem;
     text-align: center;
@@ -143,30 +150,32 @@ section h2::after{
     background: var(--violet-doux);
     display: block;
     margin: 1rem auto;
+    border-radius: 5px;
 }
 
 .a_propos p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--gris-foncé);
 }
 
-/* ================= COMPETENCES (TABLEAU) ================= */
+/* ================= COMPETENCES ================= */
 .mes_competences{
-    width:80%;
+    width: 90%;
     margin: 50px auto;
-    padding: 30px;
+    padding: 20px;
 }
 
-.mes_competences table {
-    width:100%;
+.mes_competences table{
+    width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.mes_competences th,.mes_competences td{
-    padding: 12px;
+.mes_competences th,
+.mes_competences td{
+    padding: 14px;
 }
 
 .mes_competences thead{
@@ -188,14 +197,20 @@ section h2::after{
 
 .projets article{
     width: 100%;
-    max-width: 390px;
+    max-width: 400px;
     margin: auto;
+    transition: 0.3s;
+}
+
+.projets article:hover{
+    transform: translateY(-5px);
 }
 
 .projets .partie{
     background: white;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .projets .partie img{
@@ -207,9 +222,10 @@ section h2::after{
 /* ================= CONTACT ================= */
 .contact-container{
     margin: 3rem 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .contact-content{
@@ -224,36 +240,15 @@ footer{
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    margin-top: 3rem;
 }
 
 /* ================= TABLET ================= */
 @media (min-width: 768px){
 
     .hero{
-        flex-direction: row;
         text-align: left;
     }
-
-    .mes_competences table {
-    width:100%;
-    border-collapse: collapse;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.mes_competences th,.mes_competences td{
-    padding: 12px;
-}
-
-.mes_competences thead{
-    background-color: var(--violet-doux);
-    color: white;
-}
-
-.mes_competences tbody td{
-    border-bottom: 1px solid var(--gris-claire);
-}
 
     .projets div{
         grid-template-columns: repeat(2,1fr);
@@ -262,64 +257,10 @@ footer{
     .contact-content{
         flex-direction: row;
     }
-    footer{
-    background: var(--violet-doux);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-header{
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    position: sticky;
-    top:0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    flex-wrap: wrap;
-}
 
-header a.logo{
-    color: var(--violet-doux);
-    font-weight: 700;
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-ul{
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    position: relative;
-    padding: 5px 0;
-}
-
-ul li a:hover{
-    color: var(--violet-doux);
-}
-
-ul li a::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 3px;
-    background-color: var(--violet-doux);
-    transition: 0.3s;
-}
-
-ul li a:hover::after{
-    width: 100%;
-}
+    ul{
+        gap: 25px;
+    }
 }
 
 /* ================= DESKTOP ================= */
