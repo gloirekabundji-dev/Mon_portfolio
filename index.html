@@ -22,6 +22,17 @@
                 <li><a href="contacts.html">Contacts</a></li>
             </ul>
         </nav>
+        <div class="menu-hamburger">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</div>
+<ul class="menu">
+  <li><a href="#">Accueil</a></li>
+  <li><a href="#">Projets</a></li>
+  <li><a href="#">Contact</a></li>
+  <!-- Ajoute d’autres liens si besoin -->
+</ul>
     </header>
     <main>
     <section class="hero">
@@ -94,4 +105,12 @@
         <a href="https://x.com/GLORYKBJ001" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
 </footer>
 </body>
+<script>
+const hamburger = document.querySelector('.menu-hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+</script>
 </html>

@@ -234,7 +234,16 @@ footer{
     text-align: center;
     padding: 1.5rem;
 }
+.menu {
+    display: flex; /* Affiché par défaut sur desktop */
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+}
 
+.menu-hamburger {
+    display: none; /* Caché par défaut (desktop) */
+}
 /* ================= MOBILE ================= */
 @media (max-width: 767px){
 
@@ -308,16 +317,34 @@ footer{
     }
 
     /* ================= COMPETENCES ================= */
-    .mes_competences{
-        width: 100%;
-        padding: 1rem;
-        overflow-x: auto;
-    }
+    .mes_competences table {
+    width: 100%;
+    display: block; /* Permet le scroll horizontal si nécessaire */
+    overflow-x: auto;
+    margin: 0 1rem; /* un peu de marge sur les côtés */
+}
 
-    .mes_competences table{
-        width: 100%;
-        font-size: 0.9rem;
-    }
+.mes_competences table th,
+.mes_competences table td {
+    padding: 10px; /* Un peu plus compact */
+    font-size: 0.9rem; /* Réduit légèrement la taille du texte */
+}
+
+.mes_competences thead {
+    display: table; /* Pour garder l'en-tête aligné */
+    width: 100%;
+}
+
+.mes_competences tbody {
+    display: block; /* Permet un scroll séparé si besoin */
+    width: 100%;
+}
+
+.mes_competences tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* Fixe la largeur pour éviter les débordements */
+}
 
     /* ================= PROJETS ================= */
     .projets div{
@@ -341,10 +368,70 @@ footer{
 
     /* ================= FOOTER ================= */
     footer{
-        font-size: 0.9rem;
-        padding: 1.5rem 1rem;
+    background: var(--violet-doux);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+
+    /* Style du menu hamburger */
+.menu-hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--violet-doux);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Caché par défaut */
+    text-align: center;
+}
+
+.menu li a {
+    padding: 10px 0;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: var(--violet-doux);
+}
+
+/* Affichage du menu au clic */
+.menu.active {
+    display: flex;
+}
+    .menu {
+        display: none; /* Cacher les liens par défaut sur mobile */
+        flex-direction: column; /* Pour aligner les items verticalement si besoin */
+        gap: 0;
+    }
+
+    .menu-hamburger {
+        display: flex; /* Afficher l’icône hamburger sur mobile */
+    }
+
+    .menu.active {
+        display: flex; /* Afficher la liste quand on clique */
     }
 }
+}
+
 
 /* ================= TABLET ================= */
 @media (min-width: 768px){
@@ -361,17 +448,5 @@ footer{
 
     .contact-content{
         flex-direction: row;
-    }
-}
-
-/* ================= DESKTOP ================= */
-@media (min-width: 1024px){
-
-    .hero h1{
-        font-size: 2.2rem;
-    }
-
-    .projets div{
-        grid-template-columns: repeat(3,1fr);
     }
 }
